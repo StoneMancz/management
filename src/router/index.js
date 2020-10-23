@@ -44,7 +44,7 @@ export const currencyRoutes = [
         path: 'dashbord',
         name: 'Dashbord',
         component: () => import('@/views/dashboard'),
-        meta: { title: '首页', icon: 'el-icon-s-data' }
+        meta: { title: '单位管理', icon: 'el-icon-s-data' }
       }
     ]
   },
@@ -62,22 +62,7 @@ export const currencyRoutes = [
         meta: { title: '个人中心' }
       }
     ]
-  },
-  {
-    path: '/driver',
-    name: 'Driver',
-    component: Layout,
-    redirect: '/driver/index',
-    children: [
-      {
-        path: 'index',
-        name: 'Driver-index',
-        component: () => import('@/views/driver-page'),
-        meta: { title: '引导指南', icon: 'el-icon-s-flag' }
-      }
-    ]
-  }
-]
+  }]
 /*动态添加routers*/
 export const asyncRoutes = [
   {
@@ -86,7 +71,7 @@ export const asyncRoutes = [
     component: Layout,
     redirect: '/permission/page-use',
     meta: {
-      title: '权限许可',
+      title: '区域管理',
       icon: 'el-icon-lock'
     },
     children: [
@@ -119,7 +104,7 @@ export const asyncRoutes = [
     redirect: '/table/base-table',
     component: Layout,
     meta: {
-      title: 'Table',
+      title: '设备管理',
       icon: 'el-icon-table iconfont'
     },
     children: [
@@ -147,7 +132,7 @@ export const asyncRoutes = [
         path: 'index',
         name: 'Icons-index',
         component: () => import('@/views/icons'),
-        meta: { title: 'Icons图标', icon: 'el-icon-picture-outline' }
+        meta: { title: '事件管理', icon: 'el-icon-picture-outline' }
       }
     ]
   },
@@ -156,7 +141,7 @@ export const asyncRoutes = [
     component: Layout,
     name: 'Components',
     redirect: '/components/slide-yz',
-    meta: { icon: 'el-icon-coin', title: '部分组件' },
+    meta: { icon: 'el-icon-coin', title: '历史记录' },
     children: [
       {
         path: 'slide-yz',
@@ -183,7 +168,7 @@ export const asyncRoutes = [
     component: Layout,
     name: 'Echarts',
     redirect: '/echarts/slide-chart',
-    meta: { icon: 'el-icon-s-marketing', title: 'Echarts' },
+    meta: { icon: 'el-icon-s-marketing', title: '系统管理' },
     children: [
       {
         path: 'slide-chart',
@@ -205,53 +190,6 @@ export const asyncRoutes = [
       }
     ]
   },
-  {
-    path: '/excel',
-    component: Layout,
-    name: 'Excel',
-    redirect: '/excel-operate/excel-out',
-    meta: { icon: 'el-icon-excel iconfont', title: 'Excel' },
-    children: [
-      {
-        path: 'excel-out',
-        name: 'Excel-out',
-        component: () => import('@/views/excel-operate/excel-out'),
-        meta: { title: 'Excel导出' }
-      },
-      {
-        path: 'excel-in',
-        name: 'Excel-in',
-        component: () => import('@/views/excel-operate/excel-in'),
-        meta: { title: 'Excel导入' }
-      },
-      {
-        path: 'mutiheader-out',
-        name: 'Mutiheader-out',
-        component: () => import('@/views/excel-operate/mutiheader-out'),
-        meta: { title: '多级表头导出' }
-      }
-    ]
-  },
-  {
-    path: '/error',
-    component: Layout,
-    name: 'Error',
-    redirect: '/error/404',
-    children: [
-      {
-        path: '404',
-        name: 'Page404',
-        component: () => import('@/views/error-page/404'),
-        meta: { title: '404', icon: 'el-icon-s-release' }
-      }
-    ]
-  },
-  {
-    path: 'https://github.com/gcddblue/vue-admin-webapp',
-    name: 'Github',
-    meta: { icon: 'el-icon-link', title: '项目链接' }
-  },
-  NavTest,
   {
     path: '*',
     name: '*404',

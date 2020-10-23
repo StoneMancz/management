@@ -25,9 +25,8 @@
 </p>
 
 ## 简介
-
-[vue-admin-webapp](https://gcddblue.github.io/vue-admin-webapp) 是一个后台管理 spa 页面，它基于 [vue](https://github.com/vuejs/vue) 和 [element-ui](https://github.com/ElemeFE/element) 采用了最新的前端技术栈，实现了登录权限验证，动态路由生成，并使用 [easy-mock](https://github.com/easy-mock/easy-mock) 来模拟请求数据，实现了典型的业务模型案例，它可以帮你快速搭建后台管理系统模板，并根据实际的业务需求添加路由来实现企业级管理页面，相信本项目一定能帮助到你。
-
+　
+[vue-admin-webapp](https://gcddblue.github.io/vue-admin-webapp) 是一个后台管理 spa 页面，它基于 [vue](https://github.com/vuejs/vue) 和 [element-ui](https://github.com/ElemeFE/element) 采用了最新的前端技术栈，实现了登录权限验证，动态路由生成，并使用 [easy-mock](https://github.com/easy-mock/easy-mock)
 - [在线预览-github](https://gcddblue.github.io/vue-admin-webapp)
 - [在线预览-gitee](https://gcddblue.gitee.io/vue-admin-webapp) （推荐国内用户）
 

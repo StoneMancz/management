@@ -3,8 +3,7 @@
     <m-header></m-header>
     <transition
       enter-active-class="animated bounceInRight"
-      leave-active-class="animated bounceOutRight"
-    >
+      leave-active-class="animated bounceOutRight">
       <notificat-bar v-show="msgIsShow"></notificat-bar>
     </transition>
     <div class="wrapper_con">
