@@ -1,9 +1,9 @@
 <template>
   <div class="header">
     <div class="header_l">
-      <a href="javascript:;" class="logoLink"
-        ><img src="./logo.png" alt="logo" />Vue Project</a
-      >
+      <a href="javascript:;" class="logoLink">
+        <!-- <img src="./logo.png" alt="logo"/> -->
+      </a>
     </div>
     <div class="header_r">
       <div class="headr_d1">
