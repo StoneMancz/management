@@ -1,21 +1,13 @@
 <template>
   <div>
-    <el-table
-      :data="tableData"
-      border
-      style="width: 96%;box-shadow: 0 0 10px #e2e2e2;"
-    >
-      <el-table-column prop="id" label="ID#" width="180"></el-table-column>
-      <el-table-column prop="name" label="产品名称"></el-table-column>
-      <el-table-column prop="price" label="价格"></el-table-column>
-      <el-table-column prop="quantity" label="数量"></el-table-column>
-      <el-table-column prop="status" label="状态">
-        <template slot-scope="scope">
-          <el-tag :type="scope.row.status | tagClass">{{
-            scope.row.status | statusText
-          }}</el-tag>
-        </template>
-      </el-table-column>
+    <el-table :data="tableData" border style="width: 100%;box-shadow: 0 0 10px #e2e2e2;">
+      <el-table-column prop="id" label="单位名称" width="180"></el-table-column>
+      <el-table-column prop="name" label="单位类型"></el-table-column>
+      <el-table-column prop="price" label="联系人"></el-table-column>
+      <el-table-column prop="quantity" label="联系电话"></el-table-column>
+      <el-table-column label="省份"></el-table-column>
+      <el-table-column label="地址"></el-table-column>
+      <el-table-column label="操作"></el-table-column>
     </el-table>
   </div>
 </template>

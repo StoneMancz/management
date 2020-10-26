@@ -1,98 +1,12 @@
 <template>
   <div class="dashbord">
-    <!-- cardlist -->
-    <el-row class="infoCrads">
-      <el-col :span="6">
-        <div class="cardItem">
-          <div class="cardItem_txt">
-            <count-to
-              class="cardItem_p0 color-green1"
-              :startVal="startVal"
-              :endVal="vistors"
-              :duration="2000"
-            ></count-to>
-            <p class="cardItem_p1">Total Visitors</p>
-          </div>
-          <div class="cardItem_icon">
-            <i class="el-icon-user color-green1"></i>
-          </div>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="cardItem">
-          <div class="cardItem_txt">
-            <count-to
-              class="cardItem_p0 color-blue"
-              :startVal="startVal"
-              :endVal="message"
-              :duration="2000"
-            ></count-to>
-            <p class="cardItem_p1">Messages</p>
-          </div>
-          <div class="cardItem_icon">
-            <i class="el-icon-s-comment color-blue"></i>
-          </div>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="cardItem">
-          <div class="cardItem_txt">
-            <count-to
-              class="cardItem_p0 color-red"
-              :startVal="startVal"
-              :endVal="order"
-              :duration="2000"
-            ></count-to>
-            <p class="cardItem_p1">Total Order Placeed</p>
-          </div>
-          <div class="cardItem_icon">
-            <i class="el-icon-shopping-cart-2 color-red"></i>
-          </div>
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="cardItem">
-          <div class="cardItem_txt">
-            <count-to
-              class="cardItem_p0 color-green2"
-              :startVal="startVal"
-              :endVal="profit"
-              :duration="2000"
-            ></count-to>
-            <p class="cardItem_p1">Total Profit</p>
-          </div>
-          <div class="cardItem_icon">
-            <i class="el-icon-wallet color-green2"></i>
-          </div>
-        </div>
-      </el-col>
-    </el-row>
-    <!-- end -->
-    <!-- lineEcharts -->
-    <line-charts class="lCharts" :lineChartData="lineChartData"></line-charts>
-    <!-- end -->
-    <!-- table and pie -->
-    <el-row class="tableChart">
-      <el-col :span="16">
-        <table-show :tableData="tableData" class="tableShow"></table-show>
-      </el-col>
-      <el-col :span="8">
-        <pie-charts class="pieCharts"></pie-charts>
-      </el-col>
-    </el-row>
-    <!-- end -->
-    <!-- bar chart -->
-    <bar-charts class="barCharts" :barData="barData"></bar-charts>
-    <!-- end -->
+      <table-show :tableData="tableData" class="tableShow"></table-show>
   </div>
 </template>
 
 <script>
 import CountTo from 'vue-count-to'
-import LineCharts from './components/LineCharts'
-import PieCharts from './components/PieCharts'
 import TableShow from './components/TableShow'
-import BarCharts from './components/BarCharts'
 import {
   getCardsData,
   getTableData,
@@ -117,10 +31,7 @@ export default {
   },
   components: {
     CountTo,
-    LineCharts,
-    PieCharts,
-    TableShow,
-    BarCharts
+    TableShow
   },
   methods: {
     _getAllData() {
@@ -128,6 +39,7 @@ export default {
         .all([getCardsData(), getLineData(), getTableData(), getBarData()])
         .then(
           this.$http.spread((cardData, lineData, tabData, barData) => {
+            console.log(barData);
             this.vistors = cardData.data.vistors
             this.message = cardData.data.message
             this.order = cardData.data.order
